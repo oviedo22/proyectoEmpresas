@@ -1,18 +1,17 @@
 from django.db import models
-from datetime import datetime
 
 
 # Create your models here.
 
 class Empresa(models.Model):
-    denominacion = models.CharField(max_length=128, verbose_name='Empresa, S.A', unique=True)
-    telefono = models.CharField(max_length=50, verbose_name='111111111')
-    horarioAtencion = models.CharField(max_length=256, verbose_name='Lunes-Viernes: 9:00 am a 18:00 pm')
-    quienesSomos = models.CharField(max_length=1024, verbose_name='XXXXXXXXXXXXXXXXXXXXXXXXXXX')
-    latitud = models.DecimalField(verbose_name='-32.89035681895765', max_digits=20, decimal_places=20)
-    longitud = models.DecimalField(verbose_name=' -68.847745651633', max_digits=20, decimal_places=20)
-    domicilio = models.CharField(max_length=256, verbose_name='San Martin 1580, Godoy Cruz, Mendoza')
-    email = models.EmailField(verbose_name="empresa@empresa.com")
+    denominacion = models.CharField(max_length=128, verbose_name='Empresa', unique=True)
+    telefono = models.CharField(max_length=50, verbose_name='Teléfono')
+    horarioAtencion = models.CharField(max_length=256, verbose_name='Horario De Atención')
+    quienesSomos = models.CharField(max_length=1024, verbose_name='¿Quienes Somos?')
+    latitud = models.DecimalField(verbose_name='Latitud Google Maps', max_digits=20, decimal_places=20)
+    longitud = models.DecimalField(verbose_name=' Longitud Google Maps', max_digits=20, decimal_places=20)
+    domicilio = models.CharField(max_length=256, verbose_name='Domicilio')
+    email = models.EmailField(verbose_name="Email")
 
     def __str__(self):
         return self.id
